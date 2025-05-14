@@ -163,7 +163,12 @@ const Dashboard = () => {
                                 ? "Awaiting Grading"
                                 : "Marks"}
                             </Button>
-                          ) : (
+                          ) : assignment?.lecturerId ? (
+                                <p className="cursor-none" >
+                               by {assignment?.lecturerId?.username}
+                              </p> 
+                            
+                          ):(
                             <Link to={`/assignment/${assignment._id}`}>
                               <Button className="cursor-pointer">
                                 {"Attempt"}
