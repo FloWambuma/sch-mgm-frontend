@@ -140,20 +140,23 @@ const Dashboard = () => {
                           <div className="  flex-shrink-0 flex">
                             <p className="flex items-center text-sm text-gray-500">
                               <span className="truncate flex-nowrap">
-                                {assignment?.description}
+                                {assignment?.description}   
+                              </span> <span className="truncate flex-nowrap text-blue-600 pl-4 ">
+                                by {assignment?.lecturerId?.username}
                               </span>
                             </p>
                           </div>
                         </div>
 
                         <aside className="mt-2 sm:flex sm:justify-between">
-                          {!userData ? (
+                        
+                         {!userData ? (
                             <Link to={"/login"}>
                               <Button disabled className="cursor-pointer">
                                 Login To Attempt
                               </Button>
                             </Link>
-                          ) : userData?.id == assignment?.lecturerId ? (
+                          ) : userData?.id == assignment?.lecturerId?._id ? (
                             <Link to={`/mark/${assignment._id}`}>
                               <Button className="cursor-pointer">Mark</Button>
                             </Link>
@@ -163,18 +166,16 @@ const Dashboard = () => {
                                 ? "Awaiting Grading"
                                 : "Marks"}
                             </Button>
-                          ) : assignment?.lecturerId ? (
-                                <p className="cursor-none" >
-                               by {assignment?.lecturerId?.username}
-                              </p> 
-                            
-                          ):(
-                            <Link to={`/assignment/${assignment._id}`}>
-                              <Button className="cursor-pointer">
-                                {"Attempt"}
+                          ) : (
+                          userData?.role == "LECTURER" ?   
+                              <Button disabled className="cursor-pointer">
+                              Created By {assignment?.lecturerId?.username}
                               </Button>
-                            </Link>
-                          )}
+                           : ( <Link to={`/assignment/${assignment._id}`}>
+                              <Button className="cursor-pointer">
+                                {userData?.role == "LECTURER" ? `By ` :"Attempt"}
+                              </Button>
+                            </Link>))}
                         </aside>
                       </div>
                     </li>
