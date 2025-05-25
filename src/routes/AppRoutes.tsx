@@ -5,6 +5,8 @@ import Register from "../pages/register";
 import Assignments from "../pages/assignments";
 import Assignment from "../pages/assignment";
 import Mark from "../pages/mark";
+import Students from "../pages/students";
+import Lecturer from "../pages/lecturer";
 
 const AppRoutes = () => {
   return (
@@ -16,6 +18,9 @@ const AppRoutes = () => {
         <Route path="/mark/:assignmentId" element={<Mark />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/students" element={<Students/>} />
+        <Route path="/lecturers" element={<Lecturer/>} />
+
       </Routes>
     </BrowserRouter>
   );
