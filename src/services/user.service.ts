@@ -40,7 +40,23 @@ export class UserService {
       console.log(error);
     }
   }
-
+// Get All Users (Protected Route) **************************
+  async getUsersResult(assignmentId) {
+    if (!assignmentId) {
+      throw new Error(`Assignment ID is required!`);
+    }
+    try {
+      const res = await axiosInstance.get(`/api/users/results/${assignmentId}`)
+    
+      if (res.status === 200) {
+        return res.data;
+      } else {
+        throw new Error(`Something went wrong on /users!`);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
   // Get User Profile (Protected Route) **************************
   async getUserProfile() {
     try {
