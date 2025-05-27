@@ -19,7 +19,7 @@ import {
 } from "../components/ui/select";
 import PagesLayout from "../layouts/PagesLayout";
 import { useForm } from "react-hook-form";
-import userService from "../services/user.service";
+import userService from "../apis/user.service";
 import toast from "react-hot-toast";
 
 type FormValues = {

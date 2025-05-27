@@ -3,7 +3,7 @@ import AssignmentForm from "../components/AssignmentForm";
 import PagesLayout from "../layouts/PagesLayout";
 import useUserStore from "../store/user-store";
 import { useParams } from "react-router-dom";
-import assignmentService from "../services/assignment.service";
+import assignmentService from "../apis/assignment.service";
 import { format } from "date-fns";
 import { Calendar } from "lucide-react";
 import AssignmentAnswerForm from "../components/AssignmentAnswersForm";

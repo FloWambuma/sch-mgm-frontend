@@ -21,7 +21,7 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from "./ui/form";
 
 import { Badge } from "./ui/badge";
 import { Separator } from "./ui/separator";
-import submissionService from "../services/submission.service";
+import submissionService from "../apis/submission.service";
 import toast from "react-hot-toast";
 
 // Create a schema for the form validation

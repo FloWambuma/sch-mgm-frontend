@@ -3,8 +3,8 @@ import AssignmentForm from "../components/AssignmentForm";
 import PagesLayout from "../layouts/PagesLayout";
 import useUserStore from "../store/user-store";
 import { useParams } from "react-router-dom";
-import assignmentService from "../services/assignment.service";
-import submissionService from "../services/submission.service";
+import assignmentService from "../apis/assignment.service";
+import submissionService from "../apis/submission.service";
 import AssignmentGradingTable from "../components/GradingForm";
 
 export default function Mark() {

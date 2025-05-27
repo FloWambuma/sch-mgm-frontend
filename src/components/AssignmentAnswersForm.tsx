@@ -10,7 +10,7 @@ import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { Badge } from "./ui/badge";
 import toast from "react-hot-toast";
 import { useState } from "react";
-import submissionService from "../services/submission.service";
+import submissionService from "../apis/submission.service";
 import useUserStore from "../store/user-store";
 import { useNavigate } from "react-router-dom";
 

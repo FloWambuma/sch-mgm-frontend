@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import toast from "react-hot-toast";
-import userService from "../services/user.service";
+import userService from "../apis/user.service";
 
 export class SessionUser {
   id: string;

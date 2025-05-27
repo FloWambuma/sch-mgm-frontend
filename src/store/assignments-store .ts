@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import assignmentService from "../services/assignment.service";
+import assignmentService from "../apis/assignment.service";
 
 // Define types
 interface AssignmentsStore {

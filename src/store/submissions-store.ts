@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import submissionService from "../services/submission.service";
+import submissionService from "../apis/submission.service";
 
 // Define initial state
 const initialState = {

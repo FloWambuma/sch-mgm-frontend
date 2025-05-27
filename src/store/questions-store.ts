@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import questionService from "../services/question.service";
+import questionService from "../apis/question.service";
 
 // Define initial state
 const initialState = {

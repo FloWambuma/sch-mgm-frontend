@@ -24,7 +24,7 @@ import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { Badge } from "./ui/badge";
 import toast from "react-hot-toast";
 import { useState } from "react";
-import assignmentService from "../services/assignment.service";
+import assignmentService from "../apis/assignment.service";
 
 export default function AssignmentDashboard() {
   const [isSubmitting, setIsSubmitting] = useState(false);
