@@ -54,7 +54,11 @@ export default function AssignmentAnswering({ assignment }) {
 
     return { date: dateStr, time: timeStr };
   };
-
+const isAssignmentOverDue = (assignment) => {
+    const now = new Date();
+    const endDate = new Date(assignment.endDate);
+    return now > endDate;
+  };
   // Check if assignment is currently active
   const isAssignmentActive = () => {
     const now = new Date();
@@ -295,13 +299,22 @@ export default function AssignmentAnswering({ assignment }) {
                 <div className="text-sm text-gray-600">
                   Make sure you've answered all questions before submitting.
                 </div>
-                <Button
+                {isAssignmentOverDue(assignment) ? ( <Button
+                  type="submit"
+                  className="bg-red-600 hover:bg-red-700"
+                  disabled={true}
+                >
+                 Over Due
+                </Button>) : (
+ <Button
                   type="submit"
                   className="bg-green-600 hover:bg-green-700"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Submitting..." : "Submit Assignment"}
                 </Button>
+                )}
+               
               </div>
             </CardContent>
           </Card>

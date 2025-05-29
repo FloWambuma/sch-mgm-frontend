@@ -195,7 +195,11 @@ const Dashboard = () => {
                               <div>
                                 Score : {submission?.score} /{" "}
                                 {submission?.assignmentId?.questions?.length ||
-                                  0}
+                                  0}  <Link to={`/assignment/${assignment._id}`}>
+                                <Button className="cursor-pointer">
+                                  View
+                                </Button>
+                              </Link>
                               </div>
                             ) : isAssignmentActive(assignment) ? (
                               <Link to={`/assignment/${assignment._id}`}>
@@ -204,7 +208,11 @@ const Dashboard = () => {
                                 </Button>
                               </Link>
                             ) : isAssignmentOverDue(assignment) ? (
-                              <p>Over Due</p>
+                              <p>Over Due <Link to={`/assignment/${assignment._id}`}>
+                                <Button className="cursor-pointer">
+                                  View
+                                </Button>
+                              </Link></p>
                             ) : (
                               <Button disabled className="cursor-pointer">
                                 Starting:{" "}
