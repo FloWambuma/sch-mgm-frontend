@@ -96,6 +96,38 @@ const Dashboard = () => {
                 </div>
               </div>
             )}
+
+            {userData?.role == "LECTURER" && (
+                <div className="bg-white overflow-hidden shadow rounded-lg">
+                <Link to="/students">
+                  <div className="px-4 py-5 sm:p-6">
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 bg-slate-500 rounded-md p-3">
+                        <CheckCircle className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="ml-5 w-0 flex-1">
+                        <dl> Registered Students {"->"}</dl>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            )}{userData?.role == "LECTURER" && (
+                <div className="bg-white overflow-hidden shadow rounded-lg">
+                <Link to="/lecturers">
+                  <div className="px-4 py-5 sm:p-6">
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 bg-slate-500 rounded-md p-3">
+                        <CheckCircle className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="ml-5 w-0 flex-1">
+                        <dl> Lecturers {"->"}</dl>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            )}
           </section>
 
           {/* Assignment list */}

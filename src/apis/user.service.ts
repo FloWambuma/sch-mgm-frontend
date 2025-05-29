@@ -32,7 +32,7 @@ export class UserService {
     try {
       const res = await axiosInstance.get("/api/users/");
       if (res.status === 200) {
-        return res.data?.data;
+        return res.data;
       } else {
         throw new Error(`Something went wrong on /users!`);
       }
